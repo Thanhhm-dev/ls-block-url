@@ -1,0 +1,31 @@
+{
+    "name": "ls-div",
+    "version": "1.0",
+    "description": "Display custom notification box on specified URLs.",
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"],
+        "css": ["content.css"],
+        "run_at": "document_start"
+      }
+    ],
+    "manifest_version": 3,
+    "permissions": [
+        "<all_urls>",
+        "webRequest",
+        "webRequestBlocking",
+        "tabs",
+        "storage",
+        "activeTab",
+        "scripting"
+    ],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": true
+    },
+    "action": {
+        "default_popup": "index.html"
+    }
+  }
+  
